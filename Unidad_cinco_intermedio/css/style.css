@@ -1,33 +1,37 @@
-
-.title{
+*{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+/* estilos para todo el header*/
+h2{
+    color: #090909;
+    font-size: 50px;
+    text-align: center;
     font-family: monospace;
-    font-size: 3rem;
-    color: black;
-    margin-left: 2%;
-    margin-top: 2%;
-    position: absolute;
-    top: 0px;
-    text-align: left;
-    z-index: 9;
 }
-.title2{
-    font-size: 2.5rem;
-    color: black;
-    margin-top: 4.5%;
-    position: absolute;
-    transform: translateY(-30%); 
-    margin-left: 80%;
-    top: 0px;
-    text-align: end;
-    z-index: 9;
+h3{
+    color: #090909;
+    font-size: 40px;
+    text-align: center;
+    font-family: monospace;
 }
-#borde{
+#borde1{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    height: 218px;
+    z-index: -1;
+}
+#borde2{ /*norde recortado inferior*/
     box-sizing: border-box;
     margin: 0%;
     padding: 0%;
     width: 100%;
     height: 200px;
     z-index: -1;
+    position: absolute;
 }
 #video {
     position: fixed;
@@ -38,26 +42,24 @@
     object-fit: cover;
     z-index: -2;
 }
+.title{
+    position: absolute;
+    font-family: monospace;
+    margin: 10px;
+    font-size: 30px;
+    line-height: 25px; 
+}
+#icon_header{
+    width: 130px;
+    height: 130px;
+    right: 0;
+    position: absolute;
+    z-index: 14;
+}
+/*estilos secciones menu y gif*/
 section{
     display: flex;
     justify-content:last baseline;
-}
-#imagen_menu{
-    background-color:  rgba(6, 6, 6, 0.200);
-    box-shadow: 0px 0px 20px 0px rgba(252, 248, 248, 0.775);
-    flex: 0 0 calc(50%);
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 50px;
-    color: aliceblue; 
-    margin-left: 1%;
-    padding: 0%;
-}
-#gif{  
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
 }
 #menu{
     background-color:  rgba(6, 6, 6, 0.200);
@@ -67,7 +69,23 @@ section{
     border-radius: 50px;
     color: aliceblue; 
 }
+#gif_menu{
+    box-shadow: 0px 0px 20px 0px rgba(252, 248, 248, 0.775);
+    flex: 0 0 calc(50%);
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    color: aliceblue; 
+    margin-left: 1%;
+    padding: 0%;
+}
+#gif{     
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+}
 .section nav a button {
+    cursor: pointer;
     background-color: rgba(252, 252, 252, 0.714);
     box-shadow: 0px 0px 10px 0px rgba(8, 243, 243, 0.912);  
     height: 100px;
@@ -91,26 +109,80 @@ section{
     margin: 2%;
     padding: 0%;
 }
+/*estilos de fotter y botones*/
+.footer {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    margin-top: 140px;
+    width: 100%;
+  }
+.footer button{
+    width: 3.2rem;
+    height: 3.2rem;
+    background-color: #1f0834;
+    color: #ffffff;
+    border-radius: 25px;
+    margin-left: 65px;
+    cursor: pointer;
+    font-size: 25px;
+    transition: all 0.4s ease;
+    border: 1px solid #ffffff;
+  }
+  .footer button:hover{
+    background-color: #f3eded;
+    color: #1f0834;
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    border: 1px solid #ffffff;
+  }
+
+/*responsive para pantallas mas pequeñas*/
 @media (max-width: 768px) {
     #menu {
-        /* Cambia la dirección del flexbox para apilar elementos verticalmente */
-        flex-direction:row;
-        align-items: center; /* Centra los elementos horizontalmente */
-        height: 550px;
-        width: 60px;
+        box-sizing: border-box;
+        height: auto;
+        border-radius: 10px;
     }
-  
-
-    /* Estilos para los botones del menú en pantallas pequeñas */
-    #menu a button {
-        width: 70%; /* Ocupa todo el ancho disponible */
-        font-size: 1.5rem; /* Tamaño de fuente más pequeño */
-        /* Otros estilos... */
+    #menu a button {     
+        width: 92%; /* Ocupa todo el ancho disponible */
+        font-size: 16px; /* Tamaño de fuente más pequeño */
+        height: 30px;
     }
-
-    #imagen_menu {
-        /* Estilos para la imagen en pantallas pequeñas */
+    #gif_menu {
         margin-top: 20px; /* Espacio entre el menú y la imagen */
        z-index: -1;
     }
+    section{
+        display: block;
+    }
+    #borde{
+        box-sizing: border-box;
+    }
+    #video {
+        width: 100%;
+        height: 100%; 
+        z-index: -2;
+    }
+    .title{
+        position: absolute;
+        font-size: 20px;
+        line-height: 18px;
+    }
+    #icon_header{
+        width: 90px;
+        height: 90px;
+        margin: 10px;
+    }
+    h2,h3{
+        font-size: 25px;
+    }
+      .footer button{
+        width: 2.2rem;
+        height: 2.2rem;
+        margin-left: 1px;
+      }
 }
